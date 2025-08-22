@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!--
+    Esta página fue diseñada como propuesta de sitio para P&G Consultorios.
+    Se inspira en los mejores sitios web de clínicas odontológicas de Rosario,
+    priorizando la claridad, la llamada a la acción y la optimización SEO.  
+    Los colores de marca (#727272 y #ffffff) se utilizan de manera predominante.
+  -->
+  <title>Odontología en Rosario | Alineadores, Implantes y Estética – P&G Consultorios</title>
+  <meta name="description" content="Consultorio odontológico en Rosario dirigido por el Dr.&nbsp;Pablo Pozzo. Especialista en alineadores, implantes, prótesis, ortodoncia, endodoncia y blanqueamiento. Reserva tu turno con atención personalizada y tecnología moderna.">
+  <meta name="keywords" content="odontología Rosario, alineadores, implantes dentales, prótesis dentales, ortodoncia, endodoncia, blanqueamiento, Dr. Pablo Pozzo, consultorio dental">
+  <link rel="canonical" href="https://pgconsultorios.example/">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="P&G Consultorios – Odontología integral en Rosario">
+  <meta property="og:description" content="Atendé tu sonrisa con el Dr.&nbsp;Pablo Pozzo. Alineadores, implantes, prótesis, ortodoncia, endodoncia y blanqueamiento en Rosario. Reservá tu turno.">
+  <meta property="og:url" content="https://pgconsultorios.example/">
+  <meta property="og:image" content="assets/pg_logo.png">
+  <meta property="og:locale" content="es_AR">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="P&G Consultorios – Odontología en Rosario">
+  <meta name="twitter:description" content="Consultorio dental en Rosario del Dr.&nbsp;Pablo Pozzo. Alineadores, implantes, prótesis, ortodoncia, endodoncia y blanqueamiento.">
+  <meta name="twitter:image" content="assets/pg_logo.png">
+  <link rel="preload" as="image" href="assets/pg_logo.png">
+  <link rel="preload" as="image" href="assets/hero.png">
+  <link rel="preload" as="image" href="assets/cta.png">
+
+  <!-- Estilos base -->
+  <style>
+    :root {
+      /* Colores de marca */
+      --color-primary: #727272;
+      --color-secondary: #ffffff;
+      --color-background: #f8f8f8;
+      --color-card: #ffffff;
+      --color-border: #e5e5e5;
+      --color-accent: #727272;
+      --color-accent-dark: #525252;
+      --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: var(--font-family);
+      line-height: 1.6;
+      color: var(--color-primary);
+      background-color: var(--color-secondary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--color-accent-dark);
+      text-decoration: underline;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: var(--color-secondary);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+    .nav .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+    .nav .logo span { font-size: 1.25rem; font-weight: 700; }
+    .nav .cta-button { white-space: nowrap }
+    .cta-button {
+      background-color: var(--color-accent);
+      color: var(--color-secondary);
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+      font-weight: 600;
+    }
+    .cta-button:hover {
+      background-color: var(--color-accent-dark);
+      text-decoration: none;
+    }
+    /* Navegación */
+    .menu { display:flex; align-items:center; gap:16px; }
+    .menu a { font-weight:600; color: var(--color-primary); }
+    .menu a:hover { color: var(--color-accent-dark); }
+    main {
+      flex: 1;
+    }
+    .hero {
+      position: relative;
+      padding: 80px 20px;
+      text-align: left;
+      background-image: linear-gradient(90deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.90) 38%, rgba(255,255,255,.55) 62%, rgba(255,255,255,0) 100%), url('assets/hero.png');
+      background-repeat: no-repeat, no-repeat;
+      background-size: 100% 100%, cover;
+      background-position: left top, right center;
+    }
+    .hero .container { display:flex; align-items:center; min-height:520px; }
+    .hero h1 {
+      font-size: 2.6rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--color-primary);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: var(--color-primary);
+    }
+    .section {
+      padding: 60px 20px;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--color-primary);
+    }
+    /* Servicios */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .service-card {
+      background-color: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+      transition: transform 0.15s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+    }
+    .service-card h3 {
+      margin-top: 15px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: var(--color-primary);
+    }
+    .service-card img { width:100%; height:140px; object-fit:cover; border-radius:6px; display:block; margin-bottom:10px }
+    .service-sub { display:inline-block; font-size:.85rem; color: var(--color-accent-dark); background: rgba(114,114,114,.08); padding:2px 8px; border-radius:999px; font-weight:700 }
+    .service-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    /* Sección Sobre */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Opiniones */
+    .reviews { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 18px; margin-top: 18px; }
+    .review { background: var(--color-card); border:1px solid var(--color-border); border-radius: 10px; padding:16px; box-shadow: 0 4px 12px rgba(0,0,0,.04); }
+    .stars { color: #f59e0b; letter-spacing:1px; }
+    .about-text {
+      flex: 1 1 300px;
+    }
+    .about-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .about-text p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    /* Por qué elegirnos */
+    .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .benefit {
+      flex: 1 1 220px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .benefit-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      color: var(--color-primary);
+      margin-top: 4px;
+    }
+    .benefit h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--color-primary);
+    }
+    .benefit p {
+      margin: 2px 0 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    /* Preguntas frecuentes */
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      margin-bottom: 10px;
+      background-color: var(--color-card);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 14px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+      position: relative;
+    }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-item summary:after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary:after {
+      transform: rotate(45deg);
+    }
+    .faq-item p {
+      padding: 0 20px 20px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    /* Contacto */
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-details {
+      flex: 1 1 300px;
+    }
+    .contact-details h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .contact-details p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .map {
+      flex: 1 1 300px;
+      height: 320px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .map iframe { width:100%; height:100%; display:block; border:0; }
+    /* Footer */
+    footer {
+      background-color: var(--color-background);
+      border-top: 1px solid var(--color-border);
+      padding: 30px 20px;
+      color: var(--color-primary);
+    }
+    footer .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    footer p {
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    /* CTA banner */
+    .cta-section { padding: 40px 20px; }
+    .cta-card {
+      background-image: linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.85) 35%, rgba(255,255,255,.65) 55%, rgba(255,255,255,.35) 80%), url('assets/cta.png');
+      background-repeat: no-repeat, no-repeat;
+      background-size: 100% 100%, cover;
+      background-position: left top, center;
+      border-radius: 16px;
+      box-shadow: 0 14px 30px rgba(0,0,0,.08);
+      padding: 36px 28px;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-card::before { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(114,114,114,.18) 0%, rgba(114,114,114,.10) 45%, rgba(114,114,114,.06) 100%); mix-blend-mode:multiply; pointer-events:none }
+    .cta-card h2 { font-size: 2rem; margin: 0 0 10px; color: var(--color-primary); text-shadow: 0 1px 0 rgba(255,255,255,.6) }
+    .cta-card p { margin: 0 0 18px; color: #444; text-shadow: 0 1px 0 rgba(255,255,255,.5) }
+    .cta-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap }
+    .btn-outline { background: transparent; color: var(--color-accent); border:2px solid var(--color-accent); padding: 8px 18px; border-radius: 6px; font-weight:600 }
+    .btn-outline:hover { color:#fff; background: var(--color-accent-dark); border-color: var(--color-accent-dark); text-decoration:none }
+    .cta-button { box-shadow: 0 6px 16px rgba(0,0,0,.12) }
+    .cta-button:hover { transform: translateY(-1px) }
+    /* CTA hero-like full width */
+    .cta-section { padding: 0 }
+    .cta-card { width: 100vw; margin-left: calc(50% - 50vw); border-radius: 0; min-height: 220px }
+    .cta-card > div { padding: 10px 10px }
+    .cta-button:hover { color: #fff; }
+    /* Responsivo */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .hero { background-image: linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.85) 55%, rgba(255,255,255,.55) 80%, rgba(255,255,255,0) 100%), url('assets/hero.png'); background-size: 100% 100%, cover; background-position: left top, center; }
+      .hero .container { min-height: 420px; }
+      .nav .cta-button { font-size: 14px; padding: 8px 12px }
+      .cta-card { min-height: 200px }
+      .map { height: 260px; }
+    }
+  </style>
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "P&G Consultorios",
+    "image": "assets/pg_logo.png",
+    "@id": "https://pgconsultorios.example/",
+    "url": "https://pgconsultorios.example/",
+    "telephone": "+54-341-2620099",
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "3"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Antonella Quagliatti" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Excelente atención. Profesionales muy amables. El lugar muy amplio y luminoso.",
+        "datePublished": "2022-01-01"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Daiana Cardozo" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Excelente atención. Muy amable los chicos😊",
+        "datePublished": "2022-01-01"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "María Gabriela Sorribas" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Muy buena la atención y predisposición de los odontólogos. El lugar es muy luminoso y limpio, super confortable!",
+        "datePublished": "2022-01-01"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Balcarce 1438",
+      "addressLocality": "Rosario",
+      "addressRegion": "Santa Fe",
+      "postalCode": "S2000",
+      "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -32.955,
+      "longitude": -60.64
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://www.instagram.com/pgconsultorios"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Pablo Pozzo",
+      "jobTitle": "Odontólogo"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Encabezado con logo y llamada a la acción -->
+<header>
+    <div class="container nav">
+      <div class="logo">
+        <img src="assets/pg_logo.png" alt="Logotipo de P&G Consultorios" loading="eager" decoding="async">
+        <span><strong>P&amp;G Consultorios</strong></span>
+      </div>
+      <div>
+        <a href="https://wa.me/WA_REEMPLAZAR" class="cta-button" aria-label="Reservar">Reservar</a>
+      </div>
+  </div>
+</header>
+  <main>
+    <!-- Sección de héroe -->
+  <section class="hero">
+      <div class="container">
+        <div style="max-width:560px">
+          <h1>Dentista en Rosario: alineadores, implantes y estética dental</h1>
+          <p>Turnos rápidos en Balcarce 1438 (zona centro). Profesionales matriculados, tecnología digital y atención cercana.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap">
+            <a href="#servicios" class="cta-button" aria-label="Más información">Más información</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Sección de servicios -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <h2>Servicios</h2>
+        <div class="services">
+          <div class="service-card">
+            <img src="assets/servicios/limpieza.png" alt="Limpieza dental profesional" loading="lazy" decoding="async">
+            <span class="service-sub">Gingivitis</span>
+            <h3>Limpieza dental</h3>
+            <p>Higiene profesional con remoción de placa y sarro. Prevención de inflamación gingival y halitosis.</p>
+          </div>
+          <div class="service-card">
+            <img src="assets/servicios/implante.png" alt="Implante dental y prótesis fija" loading="lazy" decoding="async">
+            <span class="service-sub">Prótesis fija</span>
+            <h3>Implantes dentales</h3>
+            <p>Reposición de piezas ausentes con planificación digital y prótesis fija estética para masticar con seguridad.</p>
+          </div>
+          <div class="service-card">
+            <img src="assets/servicios/protesis.png" alt="Prótesis dental removible" loading="lazy" decoding="async">
+            <span class="service-sub">Prótesis removible</span>
+            <h3>Prótesis dental</h3>
+            <p>Alternativas funcionales y estéticas a medida para recuperar sonrisa y función masticatoria.</p>
+          </div>
+          <div class="service-card">
+            <img src="assets/servicios/descanso.png" alt="Placa de descanso para bruxismo" loading="lazy" decoding="async">
+            <span class="service-sub">Protección nocturna</span>
+            <h3>Placas de descanso para bruxismo</h3>
+            <p>Fabricación personalizada para proteger esmalte, aliviar tensión mandibular y mejorar el descanso.</p>
+          </div>
+          <div class="service-card">
+            <img src="assets/servicios/blanqueamiento.png" alt="Tratamiento de blanqueamiento dental" loading="lazy" decoding="async">
+            <span class="service-sub">Estética dental</span>
+            <h3>Blanqueamiento</h3>
+            <p>Protocolos seguros con sensibilidad controlada. Mejora visible del tono en pocas sesiones.</p>
+          </div>
+          <div class="service-card">
+            <img src="assets/servicios/alineadores.png" alt="Alineadores transparentes" loading="lazy" decoding="async">
+            <span class="service-sub">Alineadores</span>
+            <h3>Ortodoncia invisible</h3>
+            <p>Alineadores transparentes para correcciones discretas y cómodas, con controles planificados.</p>
+          </div>
+          <div class="service-card">
+            <img src="assets/servicios/coronas-dentales.jpg" alt="Corona dental en cerámica" loading="lazy" decoding="async">
+            <span class="service-sub">Cerámica / zirconio</span>
+            <h3>Coronas dentales</h3>
+            <p>Rehabilitación de dientes debilitados con alta resistencia, ajuste preciso y apariencia natural.</p>
+          </div>
+          <div class="service-card">
+            <img src="assets/servicios/extraccion.png" alt="Extracción dental" loading="lazy" decoding="async">
+            <span class="service-sub">Cirugía</span>
+            <h3>Extracción dental</h3>
+            <p>Extracciones simples y de terceros molares, con postoperatorio controlado y recomendaciones de cuidado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA principal -->
+    <section class="cta-section" id="turno">
+      <div class="container">
+        <div class="cta-card">
+          <div style="max-width:760px;">
+            <h2>Enfocados en tu bienestar dental</h2>
+            <p>Reservá tu consulta y viví una atención personalizada, sin demoras. Tecnología digital y profesionales matriculados.</p>
+            <div class="cta-actions">
+              <a href="tel:+543412620099" class="cta-button" aria-label="Quiero un turno">Quiero un turno</a>
+            </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+    <!-- Opiniones de pacientes -->
+    <section class="section" id="opiniones">
+      <div class="container">
+        <h2>Opiniones de pacientes</h2>
+        <div class="reviews">
+          <blockquote class="review">
+            <div class="stars">★★★★★</div>
+            <p>“Excelente atención. Profesionales muy amables. El lugar muy amplio y luminoso.”</p>
+            <small>Antonella Quagliatti · Local Guide</small>
+          </blockquote>
+          <blockquote class="review">
+            <div class="stars">★★★★★</div>
+            <p>“Excelente atención. Muy amable los chicos😊”</p>
+            <small>Daiana Cardozo</small>
+          </blockquote>
+          <blockquote class="review">
+            <div class="stars">★★★★★</div>
+            <p>“Muy buena la atención y predisposición de los odontólogos. El lugar es muy luminoso y limpio, super confortable!”</p>
+            <small>María Gabriela Sorribas</small>
+          </blockquote>
+        </div>
+        <p style="text-align:center;margin-top:10px"><a href="https://www.google.com/search?q=P%26G+Consultorios+Rosario+rese%C3%B1as#lrd=0x95b7ab60b97f758d:0x622a55de41b987b1,1,,,," target="_blank" rel="noopener">Ver más reseñas en Google</a></p>
+    </div>
+  </section>
+
+    <!-- Sección sobre el doctor -->
+    <section class="section" id="sobre">
+      <div class="container about">
+        <div class="about-text">
+          <h3>Sobre el Dr.&nbsp;Pablo Pozzo</h3>
+          <p>El Dr.&nbsp;Pozzo es odontólogo matriculado y fundador de P&amp;G Consultorios. Con más de una década de experiencia en odontología integral, se destaca por su trato cercano y su dedicación a cada paciente. Su enfoque combina formación continua, tecnología de última generación y un compromiso profundo con la calidad de vida de sus pacientes.</p>
+          <p>A lo largo de su carrera ha incorporado técnicas modernas de alineación invisible, implantología y estética dental, brindando resultados predecibles y duraderos. Su consulta se caracteriza por un ambiente cálido y seguro donde cada sonrisa es única.</p>
+        </div>
+        <div class="about-image">
+          <!-- Espacio reservado para una imagen descriptiva si se deseara añadir en el futuro -->
+        </div>
+      </div>
+    </section>
+    <!-- Sección de beneficios -->
+    <section class="section" id="beneficios">
+      <div class="container">
+    <h2>¿Por qué elegirnos?</h2>
+        <div class="benefits">
+          <div class="benefit">
+            <div class="benefit-icon" aria-hidden="true">🤝</div>
+            <div>
+              <h4>Atención personalizada</h4>
+              <p>Cada paciente es atendido directamente por el Dr.&nbsp;Pozzo, garantizando continuidad y confianza.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon" aria-hidden="true">🦷</div>
+            <div>
+              <h4>Tecnología moderna</h4>
+              <p>Utilizamos equipamiento digital y técnicas avanzadas para diagnósticos precisos y tratamientos eficaces.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon" aria-hidden="true">🏠</div>
+            <div>
+              <h4>Ambiente cómodo</h4>
+              <p>Espacio cuidado y relajado para que tu visita al dentista sea una experiencia positiva.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon" aria-hidden="true">📍</div>
+            <div>
+              <h4>Ubicación céntrica</h4>
+              <p>Nos encontramos en Balcarce 1438, Rosario, de fácil acceso en transporte público o vehículo particular.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon" aria-hidden="true">📅</div>
+            <div>
+              <h4>Flexibilidad horaria</h4>
+              <p>Atendemos de lunes a viernes de 8 a&nbsp;20 h para adaptarnos a tu agenda.</p>
+            </div>
+      </div>
+      </div>
+    </div>
+  </section>
+    <!-- Sección de preguntas frecuentes -->
+    <section class="section" id="faq">
+      <div class="container">
+    <h2>Preguntas frecuentes</h2>
+        <div class="faq">
+          <details class="faq-item">
+            <summary>¿Trabajan con prepagas y obras sociales?</summary>
+            <p>Sí. Trabajamos con diversas obras sociales y prepagas, además de atender pacientes particulares. Te invitamos a comunicarte para confirmar la cobertura y requisitos.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cómo solicito un turno?</summary>
+            <p>Puedes reservar tu turno llamando al +54&nbsp;341&nbsp;262&nbsp;0099 o enviando un mensaje a través de nuestras redes sociales. Coordinaremos la fecha y horario que mejor se adapten a tus necesidades.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Qué tratamientos ofrecen?</summary>
+            <p>Ofrecemos una gama completa de servicios dentales: alineadores invisibles, implantes, prótesis, ortodoncia, endodoncia, blanqueamiento, limpieza y controles preventivos.</p>
+          </details>
+        </div>
+    </div>
+  </section>
+    <!-- Sección de contacto y ubicación -->
+    <section class="section" id="contacto">
+      <div class="container contact">
+        <div class="contact-details">
+          <h3>Contacto y Ubicación</h3>
+          <p><strong>Dirección:</strong> Balcarce 1438, S2000 Rosario, Santa Fe, Argentina</p>
+          <p><strong>Teléfono:</strong> <a href="tel:+543412620099">+54 341 262 0099</a></p>
+          <p><strong>Horario:</strong> Lunes a viernes de 8:00 a 20:00</p>
+          <p>También podés encontrarnos en Instagram: <a href="https://www.instagram.com/pgconsultorios" target="_blank" rel="noopener">@pgconsultorios</a></p>
+        </div>
+        <div class="map">
+          <iframe title="Mapa de ubicación de P&G Consultorios" width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Balcárce+1438+Rosario+Santa+Fe&output=embed">
+          </iframe>
+        </div>
+    </div>
+  </section>
+</main>
+  <!-- Pie de página -->
+<footer>
+    <div class="container footer-content">
+    <div>
+        <p><strong>P&G Consultorios</strong><br>
+        Balcarce 1438, S2000 Rosario, Santa Fe, Argentina<br>
+        Teléfono: <a href="tel:+543412620099">+54 341 262 0099</a></p>
+    </div>
+    <div>
+        <p>© <span id="year"></span> P&G Consultorios. Todos los derechos reservados.</p>
+    </div>
+  </div>
+    <script>
+      // Actualiza el año automáticamente
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</footer>
+</body>
+</html>
